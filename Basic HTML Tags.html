@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic HTML Tags</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+     
+<link rel="stylesheet" href="style.css" /> 
+<style>
+
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: #3387EB,
+  border-left: 1px solid #3387EB;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  padding-left: 18px;
+  font-weight: bold;
+  color: #3387EB;
+  background-color: transparent;
+  border-left: 2px solid #3387EB;
+}
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
+  color: #563d7c;
+  text-decoration: none;
+}
+
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover {
+  background-image: none;
+  background-color: #3387EB;
+}
+th { text-align:center;}
+</style>
+</head>
+
+<body>
+
+<main class="container language-html">
+<div class="col-md-9" role="main"><h1>Tags HTML de base</h1>
+<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> Ce qui suit n'est pas obligaoire en HTML5. Mais, il est fortement <strong>recommandé</strong> de:
+<ul>
+<li>écrire les tags en minuscule</li>
+<li>tous les tags doivent être suivis de leur tags de fin respectifs par exemple un paragraphe doit être délimité par <code>&lt;p&gt; ... &lt;/p&gt;</code> sauf les tags vides tels <code>&lt;hr></code> et <code>&lt;br></code></li>
+<li>tous les attributs de tags doivent mis entre guillemets <code>&lt;input type="text" name="nom"&gt;</code></li>
+<li>Les delimiter de tags doivent être dans l'ordre, par exemple <br><code>&lt;p&gt;&lt;strong&gt;&lt;em&gt;Mon paragraph en gras&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</code></li>
+</ul>
+<p>Qui plus est, il faut indenter de façon appropriée pour rendre le code lisible est facile à maintenir.</div>
+
+<h2 id="Introduction" class="group">Introduction</h2>
+    <p>HTML (HyperText Markup Language) est un "markup" langage qui insert des "tags" ou balises en Français dans un document texte. Le navigateur interprète ces "markups tags" pour formater le document et l'afficher. Le nagivateur décide la mise en page car les nagivateurs servent sur de nombreux systèmes, ordinateur, télévision, téléphone... </p>
+
+	<p>Le navigateur affiche le document en fonction de critères implicites et d'autres explicites. Certains de ces critères sont:
+		<ul>
+			<li>Les markup tags utilisés.</li>
+			<li>La taille physique de page.</li>
+			<li>Les polices de caractères utilisées</li>
+        </ul>
+	<p>Le navigateur ignoree les espaces supplémentaires et les nouvelles lignes entre les mots et les markups tags quand il lit le document. Ainsi les textes suivant seront formatés de façon identique.
+
+<table class="table table-hover table-bordered">
+  <tr><th>Fragment 1</th><th>Fragment 2</th><th>Fragment 3</th></tr>
+  <tr><td>Le navigateur ignorera<br> les nouvelles lignes et<br> les espaces en trop dans le texte</td><td>Le navigateur<br> ignorera les nouvelles lignes et<br> les espaces en trop dans le texte.</td><td>Le navigateur<br> <br> ignorera les nouvelles lignes et<br> en trop &nbsp;&nbsp;&nbsp; dans le texte.</td></tr>
+</table>
+
+Pour afficher:
+
+<table class="table table-hover table-bordered">
+  <tr><td>Le navigateur ignorera les nouvelles lignes et les espaces en trop dans le texte</td></tr>
+</table>
+
+<hr>
+
+<p>Le contenu html commence par le tag <code>&lt;html&gt;</code> et fini par <code>&lt;/html&gt;</code>. Le document est habituellement découpé en 2 sections:
+	<ul>
+		<li> <strong>head</strong>, encadré par <code>&lt;head&gt;</code> et <code>&lt;/head&gt;</code></li>
+		<li> <strong>body</strong>, encadré par <code>&lt;body&gt;</code> et <code>&lt;body&gt;</code></li>
+	</ul>
+</p>
+<p>La section <strong>head</strong> d'un document HTML contient des informations d'identication et de controle qui ne sont pas affichées par le navigateur. Comme par exemple un titre entouré par les <code>&lt;title&gt;</code> et <code>&lt;title&gt;</code> tags.</p>
+
+<p>La section <strong>body</strong> du document et celle qui sera affichée par le navigateur. Dans cette section, différents tag serviront à la mise en page du texte. </p>
+
+<hr>
+<p>Le langage markup est composé de tags comme <code>&lt;b&gt;</code> qui indique que le texte qui suit est en gras. Ce formatage est désactivé par le tag inverse <code>&lt;/b&gt;</code>.</p>
+
+<p>La mise en page de base d'un document HTML et l'affichage dans un navigateur comme Firefox, Chrome, Safari, Edge est comme ceci:
+
+<table class="table table-bordered">
+  <tr><th>Affiché par le navigateur</th><th>HTML markup</th></tr>
+  <tr><td style="vertical-align:middle">Un exemple simple de <b>page</b> web.</td><td><pre><code>&lt;!doctype html>
+&lt;html>
+ 
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Titre de la page &lt;/title>
+&lt;/head>
+  
+&lt;body>
+  &lt;!-- Ceci est un commentaire qui ne sera pas affiché -->
+  Un exemple simple de &lt;b>page&lt;/b> web.
+&lt;/body>
+
+&lt;/html></code></pre></td></tr>
+</table>
+
+Les tags utilisés sont:
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">HTML Markup</th><th>signification</th></tr>
+  <tr><td><code>&lt;!doctype html></code></td><td>Le document est un document HTML5</td></tr>
+  <tr><td><code>&lt;html&gt; &lt;/html&gt;</code></td><td>Marque le début et la fin de la partie html</td></tr>
+  <tr><td><code>&lt;head> &lt;/head></code></td><td>Contient la description de la page. Cette méta information n'est pas affichée.</td></tr>
+  <tr><td><code>&lt;title> &lt;/title></code></td><td>Titre de la page. Ce titre est généralement affiché par le navigateur comme le titre de la fenêtre et aussi utilisé par les moteurs de recherche pour indexer les pages.</td></tr>
+  <tr><td><code>&lt;body> &lt;/body></code></td><td>Délimite le corps de la page. Dans cette section figure le texte a afficher ainsi que langage Markup de foramatage.</td></tr>
+  <tr><td><code>&lt;b> &lt;/b></code></td><td>Mets le texte en gras pour montrer son importance.</td></tr>
+  <tr><td><code>&lt;!-- some text --></code></td><td>Commentaire HTML. Ils ne sont pas affichés, servent juste pour expliquer les intentions du programmeur.</td></tr>
+</table>
+
+<h2 id="simpleFormatting" class="group">Tags de formatage de base</h2>
+<p>Voici quelques tags de formattage disponibles en HTML.</p>
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texte formaté</th><th>HTML markup requis</th></tr>
+  <tr><td><i>Italique</i></td><td><code>&lt;i>italique&lt;/i> </code></td></tr>
+  <tr><td><b>Gras</b></td><td><code>&lt;b>gras&lt;/b></code></td></tr>
+  <tr><td><small>petit</small></td><td><code>&lt;small>petit&lt;/small> </code></td></tr>
+  <tr><td><sub>Indice</sub> </td><td><code>&lt;sub>Indice&lt;/sub></code></td></tr>
+  <tr><td><sup>Exposant</sup></td><td><code>&lt;sup>Exposant&lt;/sup></code></td></tr>
+  <tr><td>Le <span style="color:red">texte</span> est rouge.</td><td><code>Le &lt;span style="color:red">texte&lt;/span> est rouge.</code><br>
+ Le tag <code>&lt;span></code> représente un elément "inline". <br>
+ L'attribut style permet aux règles CSS d'être appliquées sur l'élément.</td></tr>
+</table>
+
+<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> Ce site utilise une librairie CSS et un CSS personalisé pour le style ainsi les styles ci-dessus ne sont pas remplacés par les règles CSS.</div>
+<p data-height="300" data-theme-id="34367" data-slug-hash="OoMpzj" data-default-tab="html,result" data-user="srandoux" data-pen-title="simple formating tags" class="codepen">See the Pen <a href="https://codepen.io/srandoux/pen/OoMpzj/">simple formating tags</a> by Sébastien Randoux (<a href="https://codepen.io/srandoux">@srandoux</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p></p>
+
+<h2 id="logicalFormatting" class="group">Tags de formatage logique</h2>
+<p>Ci-dessous, certains tags HTML de formatage logique. Ils servent à définir une unité logique dans un document (comme un tableau par exemple).</p>
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;"> Texte formaté </th><th>HTML markup requis</th></tr>
+  <tr><td>Le <em>texte</em> suivant est mis en importance.</td><td><code>Le texte &lt;em>suivant&lt;/em> est mis en importance.</code></td></tr>
+  <tr><td>Le <strong>texte</strong> suivant est mis en haute importance</td><td><code>Le texte &lt;strong>suivant&lt;/strong> est mis en haute importance.</code></td></tr>
+  <tr><td>Le <var>nom</var> est une variable de programme</td><td><code>Le &lt;var>nom&lt;/var> est une variable de programme</code></td></tr>
+  <tr><td>Le texte est <dfn>une definition</dfn></td><td><code>Le texte suivant &lt;dfn>est une définition&lt;/dfn></code></td></tr>
+  <tr><td>Le texte est <cite>une citation.</cite></td><td><code>Le texte suivant &lt;cite>est une citation.&lt;/cite></code></td></tr>
+  <tr><td>Utiliser l'adresse email <address>sebastien.randoux@sciencespo.fr</address> pour me contacter.</td><td><code>Utiliser l'adresse email &lt;address>sebastien.randoux@sciencespo.fr&lt;/address> pour me contacter</code></td></tr>
+  <tr><td><code>Représente du code informatique</code></td><td><code>&lt;code>Représente du code informatique&lt;/code></code></td></tr>
+  <tr><td>Une séquence <samp>d'affichage d'ordinateur</samp></td><td><code>Une séquence&lt;samp>d'affichage d'ordinateurt&lt;/samp></code></td></tr>
+  <tr><td><kbd>des charactères du clavier</kbd></td><td><code>&lt;kbd>des charactères du claviers&lt;/kbd></code></td></tr>
+</table>
+
+<p>Le rendu ci-dessus sans règle CSS ci-dessous:</p>
+<p data-height="300" data-theme-id="34367" data-slug-hash="GXZMrM" data-default-tab="html,result" data-user="srandoux" data-pen-title="Logical Formatting" class="codepen">See the Pen <a href="https://codepen.io/srandoux/pen/GXZMrM/">Logical Formatting</a> by Sébastien Randoux (<a href="https://codepen.io/srandoux">@srandoux</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p></p>
+<h2 id="Headings" class="group">Titres/Headings</h2>
+<p>Un titre dans le texte est signalé par le tag<code>&lt;h1></code>. Il existe 6 niveuaux de titres avec tags heading, allant de <code>&lt;h1></code> le plus gros à <code>&lt;h6></code> le plus petit.
+
+</p>
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texte formaté</th><th>HTML correspondant</th></tr>
+  <tr><td><h1>Un titre H1</h1></td><td><code>&lt;h1>Un titre H1&lt;/h1></code></td></tr>
+  <tr><td><h2>Un titre H2</h2></td><td><code>&lt;h2>Un titre H2&lt;/h2></code></td></tr>
+  <tr><td><h3>Un titre H3</h3></td><td><code>&lt;h3>Un titre H3&lt;/h3></code></td></tr>
+  <tr><td><h4>Un titre H4</h4></td><td><code>&lt;h4>Un titre H4&lt;/h4></code></td></tr>
+  <tr><td><h5>Un titre H5</h5></td><td><code>&lt;h5>Un titre H5&lt;/h5></code></td></tr>
+  <tr><td><h6>Un titre H6</h6></td><td><code>&lt;h6>Un titre H6&lt;/h6></code></td></tr>
+</table>
+
+<p>un tag heading generates des sauts de ligne juste avant et après le texte correspondant. Par exemple:
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texte formaté</th><th>HTML correspondant</th></tr>
+  <tr><td>Juste avant le tag heading.
+ <h4>Un heading H4</h4>
+ Juste après le heading.</td><td><code>Juste avant le heading<br>
+ &lt;h4>Un heading H4&lt;/h4>
+ Just après le Heading.</code></td></tr>
+</table>
+</p>
+<h2 id="Paragraphs" class="group">Paragraphes</h2>
+<p>Un paragraphe est créé avec le tag<code>&lt;p></code> et fini par le tag <code>&lt;/p></code>
+
+</p>
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texte formaté</th><th>HTML correspondant</th></tr>
+  <tr><td><p>Un premier paragraphe</p><p>Un second paragraphe</p></td><td><code>&lt;p>Un premier paragraphe&lt;/p>&lt;p>Un second paragraphe&lt;/p></code></td></tr>
+</table>
+
+<p>Il est possible de de mettre un saut de ligne dans un paragraphe en utilisant le tag <code>&lt;br></code> </p>
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texté</th><th>HTML correspondant</th></tr>
+  <tr><td><p>Un paragraphe avec <br>un saut de ligne br </p></td><td><code>&lt;p>Un paragraphe avec un  &lt;br>saut de ligne &lt;/p></code></td></tr>
+</table>
+
+<p></p>
+<h2 id="Rulers" class="group">Séparateurs</h2>
+<p>Un séparateur de page peut se faire avec le tag <code>&lt;hr></code>. Par exemple:</p>
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Texte formatét</th><th>HTML correspondant</th></tr>
+  <tr><td>Fin d'une section <hr> Nouvelle section</td><td><code>Fin d'une section &lt;hr> Nouvelle section</code></td></tr>
+  <tr><td>Seulement 40% de largeur <hr style="width: 40%;">Nouvelle section</td><td><code>Seulement 40% de largeur &lt;hr style="width: 40%"> Nouvelle section</code></td></tr>
+  <tr><td>La taille du séparateur <hr style="height: 10px;"> Nouvelle section</td><td><code>La taille du séparateur &lt;hr style="height: 10px;"> Nouvelle section</code></td></tr>
+</table>
+
+<hr>
+</div>
+<div class="row">
+    <!--Nav Bar -->
+    
+    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+            <li>
+                <a href="#Introduction">Introduction</a>
+            </li>
+            <li>
+                <a href="#simpleFormatting">Tags Simple</a>
+            </li>
+            <li>
+                <a href="#logicalFormatting">Tags de formatage</a>
+            </li>
+            <li>
+                <a href="#Headings">Titres</a>
+            </li>
+            <li>
+                <a href="#Paragraphs">Paragraphes</a>
+            </li>
+            <li>
+                <a href="#Rulers">Séparateur</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</main>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="prism/prism.js"></script>
+<script src="prism/prism-line-numbers.js"></script>
+<script src="prism/prism-line-highlight.js"></script>
+<script>
+$('body').scrollspy({
+  target: '.bs-docs-sidebar',
+  offset: 60
+});
+$("#sidebar").affix({
+  offset: {
+    top: 80
+  }
+});
+</script>
+</body>
+</html>
